@@ -1,3 +1,4 @@
+```
 book-club-ai/
 │
 ├── src/
@@ -12,6 +13,7 @@ book-club-ai/
 │   └── external-libraries.jar     # 외부 라이브러리 (예: OpenAI API 연결)
 │
 └── README.md                     # 프로젝트 설명
+```
 
 </br>
 RAGBookClubGPT.java:
