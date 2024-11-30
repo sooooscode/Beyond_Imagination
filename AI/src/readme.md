@@ -16,6 +16,7 @@ book-club-ai/
 ```
 
 </br>
+
 **RAGBookClubGPT.java:**</br>
 RAGBookClubGPT 클래스의 주요 로직을 포함. 이 클래스는 PDF 로딩, 응답 수집, 주제 생성, 자유 토론, 요약 생성 등을 담당</br>
 
