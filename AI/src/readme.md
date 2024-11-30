@@ -16,20 +16,20 @@ book-club-ai/
 ```
 
 </br>
-RAGBookClubGPT.java:
-RAGBookClubGPT 클래스의 주요 로직을 포함합니다. 이 클래스는 PDF 로딩, 응답 수집, 주제 생성, 자유 토론, 요약 생성 등을 담당합니다
+**RAGBookClubGPT.java:**</br>
+RAGBookClubGPT 클래스의 주요 로직을 포함. 이 클래스는 PDF 로딩, 응답 수집, 주제 생성, 자유 토론, 요약 생성 등을 담당</br>
 
-PDFLoader.java:
-PDF 파일을 로드하는 로직을 이 클래스에서 관리합니다. PyPDFLoader와 비슷한 역할을 합니다.
+**PDFLoader.java:**</br>
+PDF 파일을 로드하는 로직을 이 클래스에서 관리. PyPDFLoader와 비슷한 역할.</br>
 
-TextProcessor.java:
-텍스트 데이터 처리 관련 함수들을 포함합니다. 예를 들어, 감상문 수집 후 텍스트를 결합하거나, 토픽 생성에 필요한 컨텍스트를 준비하는 로직이 포함될 수 있습니다.
+**TextProcessor.java:**</br>
+텍스트 데이터 처리 관련 함수들을 포함. 예를 들어, 감상문 수집 후 텍스트를 결합하거나, 토픽 생성에 필요한 컨텍스트를 준비하는 로직이 포함.</br>
 
-ResponseFilter.java:
-응답에서 욕설과 비방을 필터링하는 로직을 포함합니다. bad_words 목록을 기반으로 필터링 작업을 합니다.
+**ResponseFilter.java:**</br>
+응답에서 욕설과 비방을 필터링하는 로직을 포함. bad_words 목록을 기반으로 필터링 작업.</br>
 
-DiscussionManager.java:
-토론 관리, 예를 들어, 각 주제에 대해 참가자들의 응답을 수집하거나, 자유 토론을 진행하는 로직을 담당합니다.
+**DiscussionManager.java:**</br>
+토론 관리</br>
 
-Main.java:
-프로그램의 엔트리 포인트. 이 파일에서 다른 클래스를 호출하여 프로그램을 실행합니다. 각 기능을 테스트하거나 실행하는데 필요한 모든 구성을 여기서 합니다.
+**Main.java:**</br>
+각 기능을 테스트하거나 실행</br>
