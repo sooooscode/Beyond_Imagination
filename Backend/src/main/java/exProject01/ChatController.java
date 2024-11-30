@@ -6,8 +6,7 @@
 // 메시지 수가 특정 조건에 도달하면 챗봇이 주제를 전송.
 // 1분마다 챗봇이 질문을 자동으로 전송.
 
-
-package com.example.chat;
+package exProject01;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;

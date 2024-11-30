@@ -3,8 +3,7 @@
 //클라이언트가 /chat 엔드포인트로 연결할 수 있도록 등록.
 //메시지를 전달할 브로커 경로(/topic)와 메시지 처리 경로(/app) 설정.
 
-
-package com.example.chat;
+package exProject01;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
