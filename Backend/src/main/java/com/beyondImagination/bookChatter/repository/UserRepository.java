@@ -1,13 +1,13 @@
 package com.beyondImagination.bookChatter.repository;
 
-import com.beyondImagination.bookChatter.model.User; // User 모델을 임포트합니다.
+import com.beyondImagination.bookChatter.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, String> { // ID 타입을 String으로 수정
 
   // 사용자 이름으로 User를 조회하는 메서드
   Optional<User> findByUsername(String username);
