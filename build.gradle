@@ -6,6 +6,7 @@ plugins {
 
 group = 'com.beyondImagination'
 version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'  // Java 버전 설정
 
 java {
 	toolchain {
@@ -27,6 +28,34 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['Backend/src/main/java']  // 소스 코드 디렉토리 경로 지정
+        }
+        resources {
+            srcDirs = ['Backend/src/main/resources']  // 리소스 디렉토리 경로 지정
+        }
+    }
+    test {
+        java {
+            srcDirs = ['Backend/src/test/java']  // 테스트 코드 디렉토리 경로 지정
+        }
+		/*         resources {
+            srcDirs = ['Backend/src/test/resources']  // 테스트 리소스 디렉토리 경로 지정
+        } */
+    }
+}
+
+bootJar {
+    archivesBaseName = 'Beyond_Imagination'  // jar 파일 이름
+}
+
+bootRun {
+    mainClass = 'com.beyondImagination.bookChatter.BookChatterApplication'  // 메인 클래스 경로
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
