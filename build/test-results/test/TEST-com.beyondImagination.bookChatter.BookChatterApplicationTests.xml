@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.beyondImagination.bookChatter.BookChatterApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-12-02T18:59:17" hostname="DESKTOP-OS0K9O0" time="0.001">
+<testsuite name="com.beyondImagination.bookChatter.BookChatterApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2024-12-02T21:14:42" hostname="DESKTOP-OS0K9O0" time="0.001">
   <properties/>
   <testcase name="initializationError" classname="com.beyondImagination.bookChatter.BookChatterApplicationTests" time="0.001">
     <failure message="java.lang.ExceptionInInitializerError" type="java.lang.ExceptionInInitializerError">java.lang.ExceptionInInitializerError
@@ -23,9 +23,10 @@ Caused by: org.apache.logging.log4j.LoggingException: log4j-slf4j2-impl cannot b
   </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J(W): Class path contains multiple SLF4J providers.
-SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@3f67593e]
-SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@1ab06251]
+SLF4J(W): Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@6bc407fd]
+SLF4J(W): Found provider [org.slf4j.simple.SimpleServiceProvider@291f18]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@17d88132]
 SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@3f67593e]
+SLF4J(I): Actual provider is of type [org.apache.logging.slf4j.SLF4JServiceProvider@6bc407fd]
 ]]></system-err>
 </testsuite>

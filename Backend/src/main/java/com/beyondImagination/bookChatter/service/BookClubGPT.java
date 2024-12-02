@@ -4,13 +4,18 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-//Service 애노테이션 추가
+//soo추가: Service 애노테이션 추가
 @Service
 public class BookClubGPT {
   private List<String> topics;
   private List<String> participantsResponses;
+
+  // soo추가:
+  @Value("${gpt.api.key}") // application.properties에서 gpt.api.key 값을 읽어옴
+  private String apiKey;
 
   public BookClubGPT(List<String> participantsResponses) {
     this.topics = new ArrayList<>();
