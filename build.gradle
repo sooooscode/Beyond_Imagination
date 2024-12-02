@@ -1,43 +1,33 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.6'  // Spring Boot 플러그인 (버전은 필요에 맞게 조정)
-    id 'java'  // Java 플러그인
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'  // 의존성 관리 플러그인
+    id 'org.springframework.boot' version '3.0.0'
+    id 'java'
 }
 
-group = 'Beyond_Imagine'  // 그룹 이름 
-version = '0.0.1-SNAPSHOT'  // 프로젝트 버전
-sourceCompatibility = '11'  // 자바 버전 
+group = 'com.beyondImagination'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
-    mavenCentral()  // Maven Central 저장소에서 의존성 다운로드
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'  // Spring Boot Web Starter (웹 애플리케이션)
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'  // JPA Starter (데이터베이스 연동)
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'  // Thymeleaf 템플릿 엔진
-    implementation 'org.springframework.boot:spring-boot-starter-security'  // Spring Security (보안)
-    implementation 'org.springframework.boot:spring-boot-starter-validation'  // Spring Validation (유효성 검사)
-    
-    // 추가적으로 필요한 의존성들을 여기에 추가
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'  // 애플리케이션 모니터링 및 관리용 스타터
-    
-    runtimeOnly 'org.postgresql:postgresql'  // PostgreSQL과 같은 DB를 사용하는 경우
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'  // 테스트용 의존성
-}
-
-test {
-    useJUnitPlatform()  // JUnit 5 사용 
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.0.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.0'
 }
 
 bootJar {
-    baseName = 'chat-application'  // JAR 파일 이름 (변경 가능)
-    version = '0.0.1-SNAPSHOT'  // JAR 파일 버전 (변경 가능)
+    
+    mainClass = 'ChatApplication'
+    //archivesBaseName = 'Beyond_Imagination'
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 데이터베이스 관련 의존성
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // 템플릿 엔진 관련 의존성
-    testImplementation 'org.springframework.boot:spring-boot-starter-test' // 테스트 관련 의존성
+bootRun {
+    mainClass = 'ChatApplication'
 }
+
+test {
+    useJUnitPlatform()
+}
+
+
