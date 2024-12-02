@@ -6,7 +6,7 @@ import java.util.*;
 
 import org.springframework.stereotype.Service;
 
-//추가
+//Service 애노테이션 추가
 @Service
 public class BookClubGPT {
   private List<String> topics;
