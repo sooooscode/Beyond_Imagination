@@ -1,0 +1,84 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.beyondImagination'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'  // Java 버전 설정
+
+repositories {
+	mavenCentral()
+    maven { url 'https://repo.spring.io/release' }  // Spring 공식 저장소 추가
+}
+
+dependencies {
+	
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'mysql:mysql-connector-java:8.0.32'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-json'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+    implementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.20.0' // 최신 버전 확인 후 설정
+    //implementation 'org.springframework.boot:spring-boot-aot:3.4.0'
+    
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+    implementation 'org.springframework:spring-context:3.4.0'//버전 확실하지 않음
+
+    implementation 'javax.persistence:javax.persistence-api:2.2'// JPA 의존성 추가
+    implementation 'org.hibernate:hibernate-core:5.4.0.Final'// Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
+
+    implementation group: 'org.devlive.sdk', name: 'openai-java-sdk', version: '2024.01.3'
+    
+    implementation 'org.apache.pdfbox:pdfbox:2.0.29'//pdf 의존성 추가
+
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['Backend/src/main/java']  // 소스 코드 디렉토리 경로 지정
+        }
+        resources {
+            srcDirs = ['Backend/src/main/resources']  // 리소스 디렉토리 경로 지정
+        }
+    }
+    test {
+        java {
+            srcDirs = ['Backend/src/test/java']  // 테스트 코드 디렉토리 경로 지정
+        }
+		/*         resources {
+            srcDirs = ['Backend/src/test/resources']  // 테스트 리소스 디렉토리 경로 지정
+        } */
+    }
+}
+
+bootJar {
+    archivesBaseName = 'Beyond_Imagination'  // jar 파일 이름
+}
+
+bootRun {
+    mainClass = 'com.beyondImagination.bookChatter.BookChatterApplication'  // 메인 클래스 경로
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
