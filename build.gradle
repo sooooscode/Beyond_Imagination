@@ -39,9 +39,6 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-
-    implementation 'org.springframework:spring-context:3.4.0'//버전 확실하지 않음
-
     implementation 'javax.persistence:javax.persistence-api:2.2'// JPA 의존성 추가
     implementation 'org.hibernate:hibernate-core:5.4.0.Final'// Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
 
