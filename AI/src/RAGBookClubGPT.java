@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class RAGBookClubGPT {
     private PDFLoader pdfLoader;
     private TextProcessor textProcessor;
