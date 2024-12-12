@@ -1,15 +1,19 @@
 package com.beyondImagination.bookChatter.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
+@ConfigurationProperties(prefix = "gpt.api")
 public class GptApiConfig {
 
-  @Value("${gpt.api.key}") // application.properties에서 gpt.api.key 값을 가져옴
-  private String apiKey;
+  private String key;
 
-  public String getApiKey() {
-    return apiKey;
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
   }
 }

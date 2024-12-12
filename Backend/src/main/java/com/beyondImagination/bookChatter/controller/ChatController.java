@@ -14,6 +14,11 @@ public class ChatController {
   @Autowired
   private BookClubGPT bookClubGPT;
 
+  @GetMapping("/")
+  public String home() {
+    return "Welcome to the Chat Service!";
+  }
+
   @PostMapping("/generate-topics")
   public void generateTopics(@RequestBody List<String> participantsResponses) {
     bookClubGPT.generateTopics();
