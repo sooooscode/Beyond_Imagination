@@ -1,7 +1,7 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.4.0'
-	id 'io.spring.dependency-management' version '1.1.6'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.0'
+    id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'com.beyondImagination'
@@ -9,12 +9,11 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'  // Java 버전 설정
 
 repositories {
-	mavenCentral()
+    mavenCentral()
     maven { url 'https://repo.spring.io/release' }  // Spring 공식 저장소 추가
 }
 
 dependencies {
-	
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -31,15 +30,15 @@ dependencies {
     implementation 'org.apache.logging.log4j:log4j-core:3.0.0-beta3' // Log4j2 Core
     
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    implementation 'javax.persistence:javax.persistence-api:2.2'// JPA 의존성 추가
-    implementation 'org.hibernate:hibernate-core:5.4.0.Final'// Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
+    implementation 'javax.persistence:javax.persistence-api:2.2' // JPA 의존성 추가
+    implementation 'org.hibernate:hibernate-core:5.4.0.Final' // Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
 
     implementation group: 'org.devlive.sdk', name: 'openai-java-sdk', version: '2024.01.3'
     
@@ -47,9 +46,7 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.36'
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
 
-
-    implementation 'org.apache.pdfbox:pdfbox:2.0.29'//pdf 의존성 추가
-
+    implementation 'org.apache.pdfbox:pdfbox:2.0.29' // pdf 의존성 추가
 }
 
 sourceSets {
@@ -65,9 +62,6 @@ sourceSets {
         java {
             srcDirs = ['Backend/src/test/java']  // 테스트 코드 디렉토리 경로 지정
         }
-		/*         resources {
-            srcDirs = ['Backend/src/test/resources']  // 테스트 리소스 디렉토리 경로 지정
-        } */
     }
 }
 
@@ -80,6 +74,5 @@ bootRun {
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
-

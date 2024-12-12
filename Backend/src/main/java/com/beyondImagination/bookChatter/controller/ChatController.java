@@ -1,6 +1,6 @@
 package com.beyondImagination.bookChatter.controller;
 
-import com.beyondImagination.bookChatter.service.BookClubGPT;
+import com.beyondImagination.AI.RAGBookClubGPT; // Update the import to RAGBookClubGPT
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 public class ChatController {
 
   @Autowired
-  private BookClubGPT bookClubGPT;
+  private RAGBookClubGPT ragBookClubGPT; // Change the type to RAGBookClubGPT
 
   @GetMapping("/")
   public String home() {
@@ -21,21 +21,21 @@ public class ChatController {
 
   @PostMapping("/generate-topics")
   public void generateTopics(@RequestBody List<String> participantsResponses) {
-    bookClubGPT.generateTopics();
+    ragBookClubGPT.generateTopics(); // Call methods from RAGBookClubGPT
   }
 
   @PostMapping("/collect-responses")
   public List<String> collectResponses(@RequestParam String topic) {
-    return bookClubGPT.collectResponses(topic);
+    return ragBookClubGPT.collectResponses(topic); // Call methods from RAGBookClubGPT
   }
 
   @PostMapping("/free-discussion")
   public void freeDiscussion() {
-    bookClubGPT.freeDiscussion();
+    ragBookClubGPT.freeDiscussion(); // Call methods from RAGBookClubGPT
   }
 
   @PostMapping("/summarize-meeting")
   public void summarizeMeeting() {
-    bookClubGPT.summarizeMeeting();
+    ragBookClubGPT.summarizeMeeting(); // Call methods from RAGBookClubGPT
   }
 }
