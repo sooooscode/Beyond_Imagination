@@ -37,8 +37,13 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+<<<<<<< HEAD
     implementation 'javax.persistence:javax.persistence-api:2.2' // JPA 의존성 추가
     implementation 'org.hibernate:hibernate-core:5.4.0.Final' // Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
+=======
+    implementation 'javax.persistence:javax.persistence-api:2.2'// JPA 의존성 추가
+    implementation 'org.hibernate:hibernate-core:5.4.0.Final'// Hibernate 의존성 (JPA 구현체로 Hibernate를 사용할 경우)
+>>>>>>> 38287ecc (최종 오류 해결 및 빌드 성공: 중복된 org.springframework:spring-context를 삭제함, gpt.api key를 추가함)
 
     implementation group: 'org.devlive.sdk', name: 'openai-java-sdk', version: '2024.01.3'
     
