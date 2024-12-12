@@ -1,5 +1,8 @@
 package com.beyondImagination.bookChatter.service;
 
+import java.util.Collections;
+import java.util.List;
+
 public class RAGBookClubGPT {
     private PDFLoader pdfLoader;
     private TextProcessor textProcessor;
