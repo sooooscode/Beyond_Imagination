@@ -90,4 +90,5 @@ class BookChatterApplicationTests {
     assert retrievedMessage != null;
     assert retrievedMessage.getContent().equals("This is a test message.");
   }
+
 }
