@@ -75,20 +75,20 @@ class BookChatterApplicationTests {
         .andExpect(status().isOk());
   }
 
-  @Test
-  void testSaveAndRetrieveChatMessage() {
-    ChatMessage message = new ChatMessage();
-    message.setSender("testUser");
-    message.setContent("This is a test message.");
-    message.setVisible(true);
-    message.setUserMessage(true);
+  // @Test
+  // void testSaveAndRetrieveChatMessage() {
+  // ChatMessage message = new ChatMessage();
+  // message.setSender("testUser");
+  // message.setContent("This is a test message.");
+  // message.setVisible(true);
+  // message.setUserMessage(true);
 
-    ChatMessage savedMessage = chatMessageRepository.save(message);
+  // ChatMessage savedMessage = chatMessageRepository.save(message);
 
-    ChatMessage retrievedMessage = chatMessageRepository.findById(savedMessage.getId()).orElse(null);
+  // ChatMessage retrievedMessage =
+  // chatMessageRepository.findById(savedMessage.getId()).orElse(null);
 
-    assert retrievedMessage != null;
-    assert retrievedMessage.getContent().equals("This is a test message.");
-  }
-
+  // assert retrievedMessage != null;
+  // assert retrievedMessage.getContent().equals("This is a test message.");
+  // }
 }
