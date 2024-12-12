@@ -1,9 +1,9 @@
 package com.beyondImagination.bookChatter.controller;
 
-import com.beyondImagination.AI.RAGBookClubGPT; // Update the import to RAGBookClubGPT
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.beyondImagination.bookChatter.service.RAGBookClubGPT;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class ChatController {
 
   @Autowired
-  private RAGBookClubGPT ragBookClubGPT; // Change the type to RAGBookClubGPT
+  private RAGBookClubGPT ragBookClubGPT; // RAGBookClubGPT 타입으로 변경
 
   @GetMapping("/")
   public String home() {
@@ -21,21 +21,25 @@ public class ChatController {
 
   @PostMapping("/generate-topics")
   public void generateTopics(@RequestBody List<String> participantsResponses) {
-    ragBookClubGPT.generateTopics(); // Call methods from RAGBookClubGPT
+    // 사용자 응답을 기반으로 주제 생성
+    ragBookClubGPT.generateTopics(participantsResponses); // generateTopics 메서드 호출
   }
 
   @PostMapping("/collect-responses")
   public List<String> collectResponses(@RequestParam String topic) {
-    return ragBookClubGPT.collectResponses(topic); // Call methods from RAGBookClubGPT
+    // 주제에 대한 사용자 응답 수집
+    return ragBookClubGPT.collectResponses(topic); // collectResponses 메서드 호출
   }
 
   @PostMapping("/free-discussion")
   public void freeDiscussion() {
-    ragBookClubGPT.freeDiscussion(); // Call methods from RAGBookClubGPT
+    // 자유 토론 시작
+    ragBookClubGPT.startFreeDiscussion(); // startFreeDiscussion 메서드 호출
   }
 
   @PostMapping("/summarize-meeting")
-  public void summarizeMeeting() {
-    ragBookClubGPT.summarizeMeeting(); // Call methods from RAGBookClubGPT
+  public void summarizeMeeting(@RequestBody List<String> topics, @RequestBody List<List<String>> allResponses) {
+    // 회의 요약
+    ragBookClubGPT.summarizeMeeting(topics, allResponses); // summarizeMeeting 메서드 호출
   }
 }
