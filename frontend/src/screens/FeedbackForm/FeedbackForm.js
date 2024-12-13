@@ -49,7 +49,7 @@ const FeedbackForm = () => {
         navigate("/chat"); // 실패 여부와 상관없이 chat.js로 이동
       }
     } else {
-      alert("첨삭된 소감문을 확인해주세요.");
+      //alert("첨삭된 소감문을 확인해주세요.");
       navigate("/chat"); // 첨삭 결과가 없어도 chat.js로 이동
     }
   };

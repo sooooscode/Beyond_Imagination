@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
+import axios from "axios";
 import "./Chat.css";
 
 let stompClient = null;
@@ -10,8 +11,19 @@ const App = () => {
   const [userInput, setUserInput] = useState("");
   const [isMemoVisible, setIsMemoVisible] = useState(false);
   const [memoContent, setMemoContent] = useState("");
+  const [userName, setUserName] = useState("익명");
 
-  const userName = "익명";
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const response = await axios.get("/api/user");
+      } catch (error) {
+        console.error("Failed to fetch user name:", error);
+        setUserName("익명");
+      }
+    };
+    fetchUserName();
+  }, []);
 
   const connect = () => {
     stompClient = new Client({

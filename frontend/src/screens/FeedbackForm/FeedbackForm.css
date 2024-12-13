@@ -7,20 +7,20 @@ body {
 
 .feedback-form {
   width: 100%;
-  max-width: 800px;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
   background: #f8f8f8;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .feedback-form h1 {
   font-size: 18px;
   color: #4a4a4a;
-  background-color: #6247aa;
+  background-color: #6a4b96;
   color: white;
   text-align: left;
   padding: 10px;
@@ -29,13 +29,14 @@ body {
 
 .feedback-form textarea {
   width: 100%;
-  height: 200px;
+  height: 500px;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 .feedback-form textarea::placeholder {
