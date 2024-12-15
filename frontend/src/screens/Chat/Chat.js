@@ -88,21 +88,17 @@ const App = () => {
       </div>
       <div className="chat-container">
         <div className={`chat-section ${isMemoVisible ? "with-memo" : ""}`}>
-          {messages.length === 0 ? (
-            <div className="chat-placeholder">메시지가 없습니다.</div>
-          ) : (
-            <div className="chat-messages">
-              {messages.map((msg, index) => (
-                <div
-                  key={index}
-                  className={`message ${msg.sender === userName ? "own" : ""}`}
-                >
-                  <strong>{msg.sender}: </strong>
-                  {msg.content}
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="chat-messages">
+            {messages.map((msg, index) => (
+              <div
+                key={index}
+                className={`message ${msg.sender === userName ? "own" : ""}`}
+              >
+                <strong>{msg.sender}: </strong>
+                {msg.content}
+              </div>
+            ))}
+          </div>
           <div className="chat-input">
             <button className="add-button">+</button>
             <input
